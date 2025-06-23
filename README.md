@@ -81,7 +81,7 @@ Frontend runs on: http://localhost:3000
 │   └── Dashboard.js    # Main dashboard
 ├── public/             # Static files
 └── Testing Files/      # Sample data for testing
-    ├── sample-data.csv     # Original sample data
+    ├── sample-data-ex0.csv # Original monthly sample data
     ├── sample-data-ex1.csv # Product-based sample data
     ├── sample-data-ex2.csv # Quarterly sample data
     └── sample-data-ex3.csv # Weekly sample data
@@ -91,7 +91,7 @@ Frontend runs on: http://localhost:3000
 
 The project includes sample CSV files for testing the upload and visualization features:
 
-- **sample-data.csv** - Monthly sales data with regions
+- **sample-data-ex0.csv** - Monthly sales data with regions (Original)
 - **sample-data-ex1.csv** - Product-based data with categories (Laptop, Mobile, Tablet)
 - **sample-data-ex2.csv** - Quarterly data with managers and categories
 - **sample-data-ex3.csv** - Weekly data with store locations and employees
