@@ -1,0 +1,13 @@
+Month,Sales,Revenue,Region,Product
+January,95,12000,North,Laptop
+February,120,15000,South,Mobile
+March,140,18000,East,Tablet
+April,160,20000,West,Laptop
+May,135,17000,North,Mobile
+June,175,22000,South,Tablet
+July,200,25000,East,Laptop
+August,220,28000,West,Mobile
+September,190,24000,North,Tablet
+October,210,26000,South,Laptop
+November,235,30000,East,Mobile
+December,260,33000,West,Tablet 

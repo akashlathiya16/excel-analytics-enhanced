@@ -79,8 +79,28 @@ Frontend runs on: http://localhost:3000
 │   ├── components/     # React components
 │   ├── contexts/       # Context providers
 │   └── Dashboard.js    # Main dashboard
-└── public/             # Static files
+├── public/             # Static files
+└── Testing Files/      # Sample data for testing
+    ├── sample-data.csv     # Original sample data
+    ├── sample-data-ex1.csv # Product-based sample data
+    ├── sample-data-ex2.csv # Quarterly sample data
+    └── sample-data-ex3.csv # Weekly sample data
 ```
+
+## Testing Files
+
+The project includes sample CSV files for testing the upload and visualization features:
+
+- **sample-data.csv** - Monthly sales data with regions
+- **sample-data-ex1.csv** - Product-based data with categories (Laptop, Mobile, Tablet)
+- **sample-data-ex2.csv** - Quarterly data with managers and categories
+- **sample-data-ex3.csv** - Weekly data with store locations and employees
+
+These files can be used to test:
+- File upload functionality
+- Chart generation
+- Data visualization
+- Different data structures and formats
 
 ## API Endpoints
 
