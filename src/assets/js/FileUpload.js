@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './FileUpload.css';
+import '../css/FileUpload.css';
 
 const FileUpload = ({ onFileUpload }) => {
   const [isDragging, setIsDragging] = useState(false);

@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import './LoginPage.css';
+import { useAuth } from '../../contexts/AuthContext';
+import '../css/LoginPage.css';
 
 const LoginPage = () => {
   const { login } = useAuth();
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -16,14 +14,13 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
-      setError('Email and password are required');
+      setError('All fields are required');
       return;
     }
-    
     setError('');
     setLoading(true);
     
-    const result = await login(name, email, password);
+    const result = await login(email, password);
     
     if (result.success) {
       navigate('/dashboard');
@@ -32,10 +29,6 @@ const LoginPage = () => {
     }
     
     setLoading(false);
-  };
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
   };
 
   return (
@@ -55,22 +48,13 @@ const LoginPage = () => {
           </div>
           <div className="form-group">
             <label>Password</label>
-            <div className="password-input-container">
-              <input
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <button
-                type="button"
-                className="password-toggle-btn"
-                onClick={togglePasswordVisibility}
-              >
-                {showPassword ? '👁️' : '👁️‍🗨️'}
-              </button>
-            </div>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
           </div>
           {error && <div className="error-message">{error}</div>}
           <button className="login-btn" disabled={loading} type="submit">
@@ -85,4 +69,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage; 
+export default LoginPage;

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
-import './Charts.css';
+import '../css/Charts.css';
 
 const Charts = ({ data, chartType = 'bar' }) => {
   const chartRef = useRef(null);
@@ -137,8 +137,65 @@ const Charts = ({ data, chartType = 'bar' }) => {
   }
 
   return (
+    <div className="chart-analytics-container">
     <div className="chart-container">
       <canvas ref={chartRef}></canvas>
+      </div>
+      
+      {/* Analytics Information */}
+      {data.analytics && (
+        <div className="analytics-info">
+          <div className="analytics-header">
+            <h3>📊 Analytics Insights</h3>
+            <p>File: {data.analytics.fileName}</p>
+          </div>
+          
+          <div className="analytics-content">
+            {/* Summary Stats */}
+            <div className="analytics-section">
+              <h4>📈 Summary Statistics</h4>
+              <div className="stats-grid">
+                <div className="stat-item">
+                  <span className="stat-label">Total Sales:</span>
+                  <span className="stat-value">{data.analytics.summary.totalSales}</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-label">Total Revenue:</span>
+                  <span className="stat-value">{data.analytics.summary.totalRevenue}K</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-label">Avg Sales:</span>
+                  <span className="stat-value">{data.analytics.summary.avgSales}</span>
+                </div>
+                <div className="stat-item">
+                  <span className="stat-label">Avg Revenue:</span>
+                  <span className="stat-value">{data.analytics.summary.avgRevenue}K</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Key Insights */}
+            <div className="analytics-section">
+              <h4>💡 Key Insights</h4>
+              <ul className="insights-list">
+                {data.analytics.insights.map((insight, index) => (
+                  <li key={index}>{insight}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Recommendations */}
+            <div className="analytics-section">
+              <h4>🎯 Recommendations</h4>
+              <ul className="recommendations-list">
+                {data.analytics.recommendations.map((recommendation, index) => (
+                  <li key={index}>{recommendation}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

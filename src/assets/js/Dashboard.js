@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { useAuth } from './contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Charts, { ChartTypeSelector } from './Charts';
-import './Dashboard.css';
+import '../css/Dashboard.css';
 
 const Dashboard = () => {
   const { currentUser, logout } = useAuth();
