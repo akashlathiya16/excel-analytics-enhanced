@@ -195,17 +195,17 @@ npx serve -s build -l 3000
 
 ```
 excel-analytics-enhanced/
-├── 📁 Excel_Analytics/              # Backend Application
-│   ├── 📁 controllers/              # Business Logic
-│   │   ├── 📄 authController.js     # Authentication logic
-│   │   ├── 📄 uploadController.js   # File upload handling
-│   │   └── 📄 userController.js     # User management
-│   ├── 📁 middleware/               # Custom Middleware
+├── 📁 Excel_Analytics/             # Backend Application
+│   ├── 📁 controllers/             # Business Logic
+│   │   ├── 📄 authController.js    # Authentication logic
+│   │   ├── 📄 uploadController.js  # File upload handling
+│   │   └── 📄 userController.js    # User management
+│   ├── 📁 middleware/              # Custom Middleware
 │   │   └── 📄 auth.js              # JWT authentication
-│   ├── 📁 models/                   # Database Models
+│   ├── 📁 models/                  # Database Models
 │   │   ├── 📄 User.js              # User schema
 │   │   └── 📄 ExcelRecord.js       # File record schema
-│   ├── 📁 routes/                   # API Routes
+│   ├── 📁 routes/                  # API Routes
 │   │   ├── 📄 authRoutes.js        # Authentication endpoints
 │   │   ├── 📄 uploadRoutes.js      # File upload endpoints
 │   │   └── 📄 userRoutes.js        # User management endpoints
@@ -410,7 +410,7 @@ npm install
 **Akash Lathiya**
 - 🌐 GitHub: [@akashlathiya16](https://github.com/akashlathiya16)
 - 📧 Email: akashweb016@gmail.com
-- 💼 LinkedIn: [Connect with me](https://linkedin.com/in/akashlathiya16)
+- 💼 LinkedIn: [Connect with me](https://www.linkedin.com/in/akash-lathiya-0981a8240/)
 - 🌟 Portfolio: [View Projects](https://akashlathiya16.github.io)
 
 ---
