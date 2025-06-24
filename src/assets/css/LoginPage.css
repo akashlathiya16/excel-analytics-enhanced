@@ -2,8 +2,9 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
   background: #e8f5e9; /* Light green background for harmony */
+  font-weight: 500;
 }
 
 .login-container {
@@ -26,8 +27,10 @@ body, html {
 h2 {
   text-align: center;
   margin-bottom: 24px;
-  color: #2e7d32; /* Dark green for header */
-  font-weight: 600;
+  color: #1b5e20; /* Darker green for better contrast */
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: -0.5px;
 }
 
 .form-group {
@@ -38,8 +41,9 @@ h2 {
 
 label {
   margin-bottom: 6px;
-  font-weight: 500;
-  color: #1b5e20; /* Slightly darker green for labels */
+  font-weight: 600;
+  color: #155724; /* Darker green for better readability */
+  font-size: 1rem;
 }
 
 input {
@@ -66,14 +70,16 @@ input:focus {
 .login-btn {
   width: 100%;
   padding: 14px;
-  background-color: #2e7d32; /* Darker green for button */
+  background-color: #1b5e20; /* Darker green for button */
   color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .login-btn:hover {
@@ -124,4 +130,59 @@ input:focus {
   font-size: 0.9rem;
   margin-top: 5px;
   text-align: center;
+}
+
+/* Dark Mode Styles for Login */
+body.dark-mode .login-container {
+  background: #121212;
+}
+
+body.dark-mode .login-card {
+  background: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.2);
+}
+
+body.dark-mode h2 {
+  color: #a5d6a7;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode label {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+body.dark-mode input {
+  background: #333333;
+  border: 2px solid #4caf50;
+  color: #e0e0e0;
+}
+
+body.dark-mode input:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 8px rgba(102, 187, 106, 0.4);
+}
+
+body.dark-mode .login-btn {
+  background-color: #4caf50;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.3);
+}
+
+body.dark-mode .login-btn:hover {
+  background-color: #388e3c;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4);
+}
+
+body.dark-mode .login-btn:disabled {
+  background-color: #2d4a2d;
+}
+
+body.dark-mode .password-toggle-btn {
+  color: #b0b0b0;
+}
+
+body.dark-mode .password-toggle-btn:hover {
+  color: #e0e0e0;
 }

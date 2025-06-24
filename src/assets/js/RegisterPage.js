@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import '../css/LoginPage.css';
 
 const RegisterPage = () => {
   const { register } = useAuth();
+  const { isDarkMode, toggleTheme } = useTheme();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,6 +42,21 @@ const RegisterPage = () => {
 
   return (
     <div className="login-container">
+      <button 
+        className={`theme-toggle ${isDarkMode ? 'dark' : ''}`}
+        onClick={toggleTheme}
+        title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          zIndex: 1000
+        }}
+      >
+        <div className={`theme-toggle-icon ${isDarkMode ? 'dark' : 'light'}`}>
+          {isDarkMode ? '🌙' : '☀️'}
+        </div>
+      </button>
       <div className="login-card">
         <h2>REGISTER</h2>
         <form onSubmit={handleSubmit}>

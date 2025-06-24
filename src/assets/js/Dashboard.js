@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useTheme } from '../../contexts/ThemeContext';
 import { useNavigate } from 'react-router-dom';
 import Charts, { ChartTypeSelector } from './Charts';
 import '../css/Dashboard.css';
 
 const Dashboard = () => {
   const { currentUser, logout } = useAuth();
+  const { isDarkMode, toggleTheme } = useTheme();
   const navigate = useNavigate();
   const [showQuickActions, setShowQuickActions] = useState(false);
   const [showUploadHistory, setShowUploadHistory] = useState(false);
@@ -440,9 +442,20 @@ const Dashboard = () => {
             </button>
           <h1>Excel Analytics</h1>
         </div>
-          <nav className="header-nav">
-            <span className="nav-link active">Dashboard</span>
-          </nav>
+          <div className="user-info">
+            <button 
+              className={`theme-toggle ${isDarkMode ? 'dark' : ''}`}
+              onClick={toggleTheme}
+              title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            >
+              <div className={`theme-toggle-icon ${isDarkMode ? 'dark' : 'light'}`}>
+                {isDarkMode ? '🌙' : '☀️'}
+              </div>
+            </button>
+            <nav className="header-nav">
+              <span className="nav-link active">Dashboard</span>
+            </nav>
+          </div>
       </header>
 
         {/* Welcome Section */}

@@ -7,10 +7,29 @@
   --accent-green: #34ce57;
   --hover-green: #218838;
   --background-light: #f8f9fa;
-  --text-dark: #343a40;
-  --text-muted: #6c757d;
+  --text-dark: #1a1a1a;
+  --text-muted: #4a4a4a;
   --white: #ffffff;
   --border-light: #e9ecef;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --primary-green: #4caf50;
+  --secondary-green: #26a69a;
+  --light-green: #2d4a2d;
+  --dark-green: #81c784;
+  --accent-green: #66bb6a;
+  --hover-green: #388e3c;
+  --background-light: #121212;
+  --text-dark: #ffffff;
+  --text-muted: #cccccc;
+  --white: #1e1e1e;
+  --border-light: #333333;
+  --text-primary: #f8f9fa;
+  --text-secondary: #e9ecef;
 }
 
 /* Dashboard Container */
@@ -18,6 +37,9 @@
   min-height: 100vh;
   background: var(--background-light);
   position: relative;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 500;
+  color: var(--text-dark);
 }
 
 /* Quick Actions Sidebar */
@@ -136,9 +158,11 @@
 
 .header-left h1 {
   margin: 0;
-  color: var(--text-dark);
-  font-size: 1.8rem;
-  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .header-nav {
@@ -148,13 +172,14 @@
 }
 
 .nav-link {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .nav-link.active,
@@ -169,9 +194,58 @@
   gap: 1rem;
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: var(--border-light);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px;
+}
+
+.theme-toggle.dark {
+  background: var(--primary-green);
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-icon.light {
+  left: 3px;
+  color: #ffa000;
+}
+
+.theme-toggle-icon.dark {
+  left: 33px;
+  color: #1976d2;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
 .welcome-text {
-  color: var(--text-dark);
-  font-weight: 500;
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .logout-btn {
@@ -197,15 +271,17 @@
 
 .welcome-section h2 {
   margin: 0 0 0.5rem 0;
-  color: var(--text-dark);
-  font-size: 2rem;
-  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .welcome-section p {
   margin: 0;
-  color: var(--text-muted);
-  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* Stats Grid */
@@ -247,8 +323,9 @@
 .card-content h3 {
   margin: 0 0 0.5rem 0;
   color: var(--dark-green);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
 .card-content p {
@@ -285,9 +362,9 @@
 }
 
 .charts-card .stat-label {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Files Card */
@@ -304,9 +381,9 @@
 }
 
 .files-card .stat-label {
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Recent Files Section */
@@ -325,9 +402,10 @@
 
 .section-header h3 {
   margin: 0;
-  color: var(--text-dark);
-  font-size: 1.5rem;
-  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
 }
 
 .upload-new-btn {
@@ -1036,4 +1114,134 @@
   color: #333;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Additional Styles */
+body.dark-mode .files-table {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+body.dark-mode .files-table th {
+  background: var(--border-light);
+  color: var(--text-dark);
+}
+
+body.dark-mode .files-table td {
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-dark);
+}
+
+body.dark-mode .files-table tr:hover {
+  background: var(--border-light);
+}
+
+body.dark-mode .stat-card {
+  background: var(--white);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+}
+
+body.dark-mode .quick-actions-sidebar {
+  background: linear-gradient(135deg, #2e7d32, #388e3c);
+}
+
+body.dark-mode .sidebar-btn {
+  background: var(--border-light);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+}
+
+body.dark-mode .sidebar-btn:hover {
+  background: var(--light-green);
+  border-color: var(--primary-green);
+}
+
+body.dark-mode .chart-modal {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+body.dark-mode .chart-modal-header {
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark-mode .chart-type-btn {
+  background: var(--border-light);
+  color: var(--text-dark);
+}
+
+body.dark-mode .chart-type-btn:hover {
+  background: var(--light-green);
+}
+
+body.dark-mode .chart-type-btn.active {
+  background: var(--primary-green);
+  color: white;
+}
+
+body.dark-mode .history-item {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+}
+
+body.dark-mode .history-item:hover {
+  background: var(--border-light);
+}
+
+body.dark-mode .custom-alert-modal,
+body.dark-mode .custom-confirm-modal {
+  background: var(--white);
+  color: var(--text-dark);
+}
+
+body.dark-mode .modal-header {
+  background: var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+body.dark-mode .modal-body {
+  background: var(--white);
+}
+
+body.dark-mode .modal-footer {
+  background: var(--border-light);
+}
+
+body.dark-mode .empty-state {
+  color: var(--text-dark);
+}
+
+/* Additional Dark Mode Text Improvements */
+body.dark-mode .card-content p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+body.dark-mode .upload-btn,
+body.dark-mode .upload-new-btn,
+body.dark-mode .analyze-btn {
+  font-weight: 700;
+  text-shadow: none;
+}
+
+body.dark-mode .sidebar-content h3 {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .file-name {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+body.dark-mode .modal-header h3 {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+body.dark-mode .modal-body p {
+  color: var(--text-secondary);
+  font-weight: 500;
 }
