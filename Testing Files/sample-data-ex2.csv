@@ -1,0 +1,13 @@
+Quarter,Orders,Profit,Category,Manager
+Q1,85,9500,Electronics,John
+Q2,110,13000,Clothing,Sarah
+Q3,130,16000,Books,Mike
+Q4,155,19000,Electronics,John
+Q1,125,15000,Clothing,Sarah
+Q2,145,18000,Books,Mike
+Q3,170,21000,Electronics,John
+Q4,195,24000,Clothing,Sarah
+Q1,175,22000,Books,Mike
+Q2,200,25000,Electronics,John
+Q3,225,28000,Clothing,Sarah
+Q4,250,31000,Books,Mike 

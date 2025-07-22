@@ -1,0 +1,19 @@
+/* Global styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+/* NEW Version Background */
+body.new-version:not(.dark-mode) {
+  background-color: #ffffff !important;
+}
+
+body.new-version.dark-mode {
+  background-color: #000000 !important;
+}

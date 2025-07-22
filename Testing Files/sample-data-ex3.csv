@@ -1,0 +1,13 @@
+Week,Units,Cost,Store,Employee
+Week1,45,5500,Store_A,Raj
+Week2,62,7200,Store_B,Priya
+Week3,78,8900,Store_C,Amit
+Week4,91,10500,Store_A,Raj
+Week5,68,7800,Store_B,Priya
+Week6,84,9600,Store_C,Amit
+Week7,105,12000,Store_A,Raj
+Week8,120,13500,Store_B,Priya
+Week9,97,11200,Store_C,Amit
+Week10,115,13000,Store_A,Raj
+Week11,138,15500,Store_B,Priya
+Week12,155,17800,Store_C,Amit 
