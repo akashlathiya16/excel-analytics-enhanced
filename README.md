@@ -6,6 +6,26 @@ A comprehensive **MERN Stack** web application for Excel/CSV file analysis with 
 ![Version](https://img.shields.io/badge/Version-2.1.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
+## 📚 Documentation
+
+| Document | Description | Audience |
+|----------|-------------|----------|
+| **[📖 README.md](README.md)** | Project overview, installation & setup guide | Users & Contributors |
+| **[🎓 LEARNING-GUIDE.md](LEARNING-GUIDE.md)** | Complete technical deep dive & learning resource | Students & Developers |
+
+> **👨‍🎓 For Students**: Check out our comprehensive [**Learning Guide**](LEARNING-GUIDE.md) to understand every technology and feature in detail!
+
+---
+
+## 🚀 Quick Navigation
+
+- **🏠 [Project Overview](#-key-features)** - Main features and capabilities
+- **⚙️ [Installation Guide](#-installation--setup)** - Setup instructions  
+- **🎓 [Learning Guide](LEARNING-GUIDE.md)** - Complete technical documentation
+- **💻 [Running the App](#-running-the-application)** - How to start the project
+- **📊 [Tech Stack](#-complete-tech-stack)** - Technologies used
+- **🔧 [API Documentation](#-api-documentation)** - Backend endpoints
+
 ---
 
 ## 🌟 Key Features
