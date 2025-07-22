@@ -167,7 +167,7 @@ cd ..
 # Copy these contents:
 ```
 ```env
-MONGODB_URI=mongodb+srv://Akash16:Excel123@excelanalytics.vukejz6.mongodb.net/?retryWrites=true&w=majority&appName=ExcelAnalytics
+MONGODB_URI=mongodb+srv://USERNAME:PASSWORD@your-cluster.mongodb.net/?retryWrites=true&w=majority&appName=ExcelAnalytics
 JWT_SECRET=your_super_secure_jwt_secret_key_here_excel_analytics_2024
 PORT=5000
 NODE_ENV=development
