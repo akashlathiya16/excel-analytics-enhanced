@@ -80,6 +80,24 @@ export function AuthProvider({ children }) {
         password
       });
       
+      // Auto-login after successful registration
+      const { token, user } = response.data;
+      if (token && user) {
+        localStorage.setItem('token', token);
+        localStorage.setItem('userEmail', user.email);
+        localStorage.setItem('userName', capitalizeFirstLetter(user.name));
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        
+        const capitalizedUser = {
+          ...user,
+          name: capitalizeFirstLetter(user.name),
+          email: user.email
+        };
+        
+        setCurrentUser(capitalizedUser);
+        return { success: true, autoLogin: true, message: 'Registration successful! Welcome!' };
+      }
+      
       return { success: true, message: 'Registration successful! Please login.' };
     } catch (error) {
       return { 

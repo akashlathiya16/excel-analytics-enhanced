@@ -22,9 +22,13 @@ const AppContent = () => {
           <Route path="/register" element={<RegisterPage />} />
           <Route
             path="/dashboard"
-            element={<Dashboard />}
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
           />
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/" element={<Navigate to="/login" replace />} />
         </Routes>
       </Router>
       {/* Click Spark effect only for NEW version */}

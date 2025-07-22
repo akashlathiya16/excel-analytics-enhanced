@@ -37,10 +37,17 @@ const RegisterPage = () => {
     const result = await register(name, email, password);
     
     if (result.success) {
-      setSuccess('Registration successful! Redirecting to login...');
-      setTimeout(() => {
-        navigate('/login');
-      }, 2000);
+      if (result.autoLogin) {
+        setSuccess('Registration successful! Redirecting to dashboard...');
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 1500);
+      } else {
+        setSuccess('Registration successful! Redirecting to login...');
+        setTimeout(() => {
+          navigate('/login');
+        }, 2000);
+      }
     } else {
       setError(result.error);
     }

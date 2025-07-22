@@ -120,9 +120,14 @@ FRONTEND_URL=http://localhost:3000
 ### **MongoDB Atlas Setup (Recommended)**
 1. Create account at [MongoDB Atlas](https://cloud.mongodb.com)
 2. Create a new cluster (free tier available)
-3. Add your IP address to Network Access whitelist
+3. **Network Access**: Add your IP address OR use `0.0.0.0/0` (allow from anywhere)
 4. Create database user with read/write permissions
 5. Replace the MONGODB_URI with your Atlas connection string
+
+### **⚠️ Important for Multiple PCs:**
+- **Option A**: Add each PC's IP to MongoDB Atlas Network Access
+- **Option B**: Use `0.0.0.0/0` in Network Access (allows any IP)
+- **Always create `.env` file** in `Excel_Analytics/` folder on each new setup
 
 ### **3. Frontend Configuration**
 ```bash
@@ -132,6 +137,58 @@ cd ..
 # Install frontend dependencies
 npm install
 ```
+
+---
+
+## 💻 New PC Setup (Clone & Run)
+
+### **Quick Setup for Additional PCs:**
+
+#### **Step 1: Clone Repository**
+```bash
+git clone https://github.com/akashlathiya16/excel-analytics-enhanced.git
+cd excel-analytics-enhanced
+```
+
+#### **Step 2: Install Dependencies**
+```bash
+# Frontend dependencies
+npm install
+
+# Backend dependencies  
+cd Excel_Analytics
+npm install
+cd ..
+```
+
+#### **Step 3: Create Environment File**
+```bash
+# Create .env file in Excel_Analytics folder
+# Copy these contents:
+```
+```env
+MONGODB_URI=mongodb+srv://Akash16:Excel123@excelanalytics.vukejz6.mongodb.net/?retryWrites=true&w=majority&appName=ExcelAnalytics
+JWT_SECRET=your_super_secure_jwt_secret_key_here_excel_analytics_2024
+PORT=5000
+NODE_ENV=development
+FRONTEND_URL=http://localhost:3000
+```
+
+#### **Step 4: One-Click Start**
+```bash
+# Windows: Double-click the batch file
+start-project.bat
+
+# Or manually start both servers
+# Terminal 1: cd Excel_Analytics && npm start  
+# Terminal 2: npm start
+```
+
+### **🌍 Multi-PC Database Sharing:**
+- ✅ **Same Database**: All PCs connect to same MongoDB Atlas cluster
+- ✅ **User Isolation**: Each user's data is separate and secure  
+- ✅ **Real-time Sync**: Register on any PC, login from anywhere
+- ✅ **File Storage**: Upload files from any location, access from anywhere
 
 ---
 
