@@ -392,7 +392,14 @@ const Charts = ({ data, chartType = 'bar' }) => {
       // Add title page
       pdf.setFontSize(22);
       pdf.setFont('helvetica', 'bold');
-      pdf.text(data.title || 'Chart Analysis Report', pdfWidth / 2, 40, { align: 'center' });
+      
+      // Sanitize title to prevent encoding issues
+      const sanitizedTitle = (data.title || 'Chart Analysis Report')
+        .replace(/[^\x00-\x7F]/g, '') // Remove non-ASCII characters
+        .replace(/[^\w\s\-\.]/g, ' ') // Keep only alphanumeric, spaces, hyphens, dots
+        .trim();
+      
+      pdf.text(sanitizedTitle, pdfWidth / 2, 40, { align: 'center' });
       
       pdf.setFontSize(12);
       pdf.setFont('helvetica', 'normal');
